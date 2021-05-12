@@ -165,17 +165,17 @@ Depending on how your asset variants are made, you can chain together variant na
 | ----------------------- | ---------------------------------------------------------- |
 | Skeletal Mesh           | SK_Bob                                                     |
 | Material                | M_Bob                                                      |
-| Texture (Diffuse/Albedo)| T_Bob_D                                                    |
+| Texture (Color)         | T_Bob_C                                                    |
 | Texture (Normal)        | T_Bob_N                                                    |
-| Texture (Evil Diffuse)  | T_Bob_Evil_D                                               |
+| Texture (Evil Color)    | T_Bob_Evil_C                                               |
 
 ##### 1.1e2 Rocks
 
 | Asset Type              | Asset Name                                                 |
 | ----------------------- | ---------------------------------------------------------- |
-| Static Mesh (01)        | S_Rock_01                                                  |
-| Static Mesh (02)        | S_Rock_02                                                  |
-| Static Mesh (03)        | S_Rock_03                                                  |
+| Static Mesh (01)        | SM_Rock_01                                                 |
+| Static Mesh (02)        | SM_Rock_02                                                 |
+| Static Mesh (03)        | SM_Rock_03                                                 |
 | Material                | M_Rock                                                     |
 | Material Instance (Snow)| MI_Rock_Snow                                               |
 
@@ -224,8 +224,8 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Level (Geometry)        |            | _Geo       |                                  |
 | Level (Gameplay)        |            | _Gameplay  |                                  |
 | Blueprint               | BP_        |            |                                  |
-| Material                | M_         |            |                                  |
-| Static Mesh             | S_         |            | Many use SM_. We use S_.         |
+| Material Instance       | MI_        |            |                                  |
+| Static Mesh             | SM_        |            |                                  |
 | Skeletal Mesh           | SK_        |            |                                  |
 | Texture                 | T_         | _?         | See [Textures](#anc-textures)    |
 | Particle System         | PS_        |            |                                  |
@@ -289,8 +289,9 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 
 | Asset Type                    | Prefix     | Suffix     | Notes                            |
 | ----------------------------- | ---------- | ---------- | -------------------------------- |
+| Master Material               | MM_        |            |                                  |
 | Material                      | M_         |            |                                  |
-| Material (Post Process)       | PP_        |            |                                  |
+| Material (Post Process)       | M_PP_      |            |                                  |
 | Material Function             | MF_        |            |                                  |
 | Material Instance             | MI_        |            |                                  |
 | Material Parameter Collection | MPC_       |            |                                  |
@@ -305,11 +306,11 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Texture                 | T_         |            |                                  |
-| Texture (Diffuse/Albedo/Base Color)| T_ | _D      |                                  |
+| Texture (Base Color)    | T_         | _C         |                                  |
 | Texture (Normal)        | T_         | _N         |                                  |
 | Texture (Roughness)     | T_         | _R         |                                  |
-| Texture (Alpha/Opacity) | T_         | _A         |                                  |
-| Texture (Ambient Occlusion) | T_     | _O         |                                  |
+| Texture (Opacity)       | T_         | _O         |                                  |
+| Texture (Ambient Occlusion) | T_     | _A         |                                  |
 | Texture (Bump)          | T_         | _B         |                                  |
 | Texture (Emissive)      | T_         | _E         |                                  |
 | Texture (Mask)          | T_         | _M         |                                  |
