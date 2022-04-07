@@ -295,6 +295,10 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Material Function             | MF_        |            |                                  |
 | Material Instance             | MI_        |            |                                  |
 | Material Parameter Collection | MPC_       |            |                                  |
+| Material Layer                | ML_        |            |                                  |
+| Material Layer Blend          | MLB_       |            |                                  |
+| Material Layer Instance       | MLI_       |            |                                  |
+| Material Parameter Collection | MPC_       |            |                                  |
 | Subsurface Profile            | SP_        |            |                                  |
 | Physical Materials            | PM_        |            |                                  |
 | Decal                         | M_, MI_    | _Decal     |                                  |
@@ -318,9 +322,13 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Texture (Metallic)      | T_         | _M         |                                  |
 | Texture (Packed)        | T_         | _*         | See notes below about [packing](#anc-textures-packing). |
 | Texture Cube            | TC_        |            |                                  |
+| Volume Texture          | TV_        |            |                                  |
+| Texture 2D Array        | TA_        |            |                                  |
+| Runtime Virtual Texture | VT_        |            |                                  |
 | Media Texture           | MT_        |            |                                  |
 | Render Target           | RT_        |            |                                  |
 | Cube Render Target      | RTC_       |            |                                  |
+| Volume Render Target    | RTV_       |            |                                  |
 | Texture Light Profile   | TLP        |            |                                  |
 
 <a name="anc-textures-packing"></a>
@@ -415,7 +423,7 @@ It is common practice to pack multiple layers of texture data into one texture. 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Particle System         | PS_        |            |                                  |
-| Material (Post Process) | PP_        |            |                                  |
+| Material (Post Process) | M_PP_      |            |                                  |
 
 **[⬆ Back to Top](#table-of-contents)**
 
