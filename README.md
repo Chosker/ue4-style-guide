@@ -1,4 +1,4 @@
-(https://gamemak.in) UE5 Style Guide() {
+# UE5 Style Guide
 
 *A mostly reasonable approach to Unreal Engine 5*
 
@@ -51,7 +51,7 @@ For example, if you want to send someone to the first principle of this style gu
     - [2.2.3 Samples, Templates, and Marketplace Content Are Risk-Free](#2.2.3)
     - [2.2.4 DLC, Sub-Projects, and Patches Are Easily Maintained](#2.2.4)
   - [2.3 Use Developers Folder For Local Testing](#structure-developers)
-  - [2.4 All Map<sup>*</sup> Files Belong In A Folder Called Maps](#structure-maps)
+  - [2.4 All Map Files Belong In A Folder Called Maps](#structure-maps)
   - [2.5 Do Not Create Folders Called `Assets` or `AssetTypes`](#structure-assettypes)
     - [2.5.1 Creating a folder named `Assets` is redundant](#2.5.1)
     - [2.5.2 Creating a folder named `Meshes`, `Textures`, or `Materials` is redundant](#2.5.2)
@@ -585,7 +585,7 @@ Once the assets are ready for use, an artist simply has to move the assets into 
 
 <a name="2.4"></a>
 <a name="structure-maps"></a>
-### 2.4 All Map[<sup>*</sup>](#terms-level-map) Files Belong In A Folder Called Maps
+### 2.4 All Map Files Belong In A Folder Called Maps
 
 Map files are incredibly special and it is common for every project to have its own map naming system, especially if they work with sub-levels or streaming levels. No matter what system of map organization is in place for the specific project, all levels should belong in `/Content/Project/Maps`.
 
@@ -621,15 +621,13 @@ This can be seen as a pseudo-exception to [2.5](#2.5).
 
 There are certain asset types that have a huge volume of related files where each asset has a unique purpose. The two most common are Animation and Audio assets. If you find yourself having 15+ of these assets that belong together, they should be together.
 
-For example, animations that are shared across multiple characters should lay in `Characters/Common/Animations` and may have sub-folders such as `Locomotion` or `Cinematic`.
-
 > This does not apply to assets like textures and materials. It is common for a `Rocks` folder to have a large amount of textures if there are a large amount of rocks, however these textures are generally only related to a few specific rocks and should be named appropriately. Even if these textures are part of a [Material Library](#2.7).
 
 <a name="2.7"></a>
 <a name="structure-material-library"></a>
 ### 2.7 `MaterialLibrary`
 
-If your project makes use of master materials, layered materials, or any form of reusable materials or textures that do not belong to any subset of assets, these assets should be located in `Content/Project/MaterialLibrary`.
+If your project makes use of master materials, layered materials, or any form of reusable materials or textures that do not belong to any subset of assets, these assets should be located inside a MaterialLibrary.
 
 This way all 'global' materials have a place to live and are easily located.
 
@@ -1163,7 +1161,7 @@ Pretty simple. All meshes, regardless how they are to be used, should not be mis
 <a name="s-uvs-no-overlapping"></a>
 #### 4.1.2 All Meshes Must Not Have Overlapping UVs for Lightmaps
 
-Pretty simple. All meshes, regardless how they are to be used, should have valid non-overlapping UVs.
+Pretty simple. If Baked lighting is used then all meshes, regardless how they are to be used, should have valid non-overlapping UVs on the Lightmap UV set.
 
 <a name="4.2"></a>
 <a name="s-lods"></a>
@@ -1217,8 +1215,6 @@ As mentioned in [00.1 Forbidden Identifiers](#00), spaces and all white space ch
 <a name="Levels"></a>
 <a name="levels"></a>
 ## 6. Levels / Maps
-
-[See Terminology Note](#terms-level-map) regarding "levels" vs "maps".
 
 This section will focus on Level assets and their internals.
 
@@ -1298,10 +1294,3 @@ Copyright (c) 2016 Gamemakin LLC
 See [LICENSE](/LICENSE)
 
 **[⬆ Back to Top](#table-of-contents)**
-
-
-## Amendments
-
-We encourage you to fork this guide and change the rules to fit your team's style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
-
-# };
