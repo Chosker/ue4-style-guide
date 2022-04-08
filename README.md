@@ -1,54 +1,25 @@
-# [Gamemakin](https://gamemak.in) UE4 Style Guide() {
+(https://gamemak.in) UE5 Style Guide() {
 
-*A mostly reasonable approach to Unreal Engine 4*
+*A mostly reasonable approach to Unreal Engine 5*
 
-Heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
-
-[![Analytics](https://ga-beacon.appspot.com/UA-80567399-1/repo?useReferrer)](#)
-
-## Repo Notice
-
-This repo is now located at https://github.com/Allar/ue5-style-guide. The default branch of this repository has been renamed `main`.
-
-## This is currently for UE4. For UE5/v2, see the v2 branch
-## Linter and Style Guide Documentation
-
-More technical documentation regarding Linter and the Style Guide can be found at our [ReadTheDocs](https://ue4-style-guide.readthedocs.io/en/latest/) page.
-
-## Discuss This Style Guide
-
-Gamemakin LLC has a public Discord channel at http://discord.gamemak.in with a #linter channel if you'd like to discuss all things style guide and Linter plugin.
+Forked from [Allar's UE5 Style Guide](https://github.com/Allar/ue5-style-guide).
 
 ## Linking To This Document
 
 Every section of this style guide is numbered for both easy reference and easy linking. You can link to any section directly by simply append a hash tag and the section number to the end of http://ue4.style
 For example, if you want to send someone to the first principle of this style guide you would append `#0.1`, resulting in http://ue4.style#0.1.
 
-## Forks And Translations
-
-If you have made a notable fork or translation that is not suitable for a pull request into this repo, please submit a pull request to add the fork or translation here.
-
-* [Korean Translation](https://github.com/ymkim50/ue4-style-guide/blob/master/README_Kor.md) by ymkim50
-* [Russian Translation](https://github.com/CosmoMyzrailGorynych/ue4-style-guide-rus/blob/master/README.md) by CosmoMyzrailGorynych
-* [Japanese Translation](https://github.com/akenatsu/ue4-style-guide/blob/master/README.jp.md) by akenatsu
-* [Chinese Translation](https://github.com/skylens-inc/ue4-style-guide/blob/master/README.md) by Beijing Skylens Tech.
-* [Brazilian Portuguese Translation](https://github.com/danlvr/ue5-style-guide/blob/main/README_PTBR.md) by danlvr.
-* [French Translation](https://github.com/Arnaud58/ue5-style-guide/blob/main/README.md) by Arnaud58
-
 ## Table of contents
 - [Important Terminology](#important-terminology)
-  - [Levels/Maps](#terms-level-map)
   - [Identifiers](#terms-identifiers)
   - [Cases](#terms-cases)
   - [Variables / Properties](#terms-var-prop)
     - [Property](#terms-property)
     - [Variable](#terms-variable)
 - [0. Principles](#0)
-  - [0.1 If your UE4 project already has a style guide, you should follow it](#0.1)
-  - [0.2 All structure, assets, and code in any Unreal Engine 4 project should look like a single person created it, no matter how many people contributed](#0.2)
-  - [0.3 Friends do not let friends have bad style](#0.3)
-  - [0.4 A team without a style guide is no team of mine](#0.4)
-  - [0.5 Don't Break The Law](#0.5)
+  - [0.1 All structure, assets, and code in any Unreal Engine project should look like a single person created it, no matter how many people contributed](#0.1)
+  - [0.2 Friends do not let friends have bad style](#0.2)
+  - [0.3 Don't Break The Law](#0.3)
 - [00. Globally Enforced Opinions](#00)
   - [00.1 Forbidden Characters](#00.1)
     - [Identifiers](#identifiers)
@@ -64,13 +35,11 @@ If you have made a notable fork or translation that is not suitable for a pull r
   - [1.2.6 Textures](#anc-textures)
     - [1.2.6.1 Texture Packing](#anc-textures-packing)
   - [1.2.7 Miscellaneous](#anc-misc)
-  - [1.2.8 Paper 2D](#anc-paper2d)
-  - [1.2.9 Physics](#anc-physics)
-  - [1.2.10 Sounds](#anc-sounds)
-  - [1.2.11 User Interface](#anc-ui)
-  - [1.2.12 Effects](#anc-effects)
+  - [1.2.8 Physics](#anc-physics)
+  - [1.2.9 Sounds](#anc-sounds)
+  - [1.2.10 User Interface](#anc-ui)
+  - [1.2.11 Effects](#anc-effects)
 - [2. Content Directory Structure](#structure)
-  - [2e1 Example Project Content Structure](#2e1)
   - [2.1 Folder Names](#structure-folder-names)
     - [2.1.1 Always Use PascalCase](#2.1.1)
     - [2.1.2 Never Use Spaces](#2.1.2)
@@ -83,13 +52,12 @@ If you have made a notable fork or translation that is not suitable for a pull r
     - [2.2.4 DLC, Sub-Projects, and Patches Are Easily Maintained](#2.2.4)
   - [2.3 Use Developers Folder For Local Testing](#structure-developers)
   - [2.4 All Map<sup>*</sup> Files Belong In A Folder Called Maps](#structure-maps)
-  - [2.5 Use A `Core` Folder For Critical Blueprints And Other Assets](#structure-core)
-  - [2.6 Do Not Create Folders Called `Assets` or `AssetTypes`](#structure-assettypes)
-    - [2.6.1 Creating a folder named `Assets` is redundant](#2.6.1)
-    - [2.6.2 Creating a folder named `Meshes`, `Textures`, or `Materials` is redundant](#2.6.2)
-  - [2.7 Very Large Asset Sets Get Their Own Folder Layout](#structure-large-sets)
-  - [2.8 `MaterialLibrary`](#structure-material-library)
-  - [2.9 No Empty Folders](#structure-no-empty-folders)
+  - [2.5 Do Not Create Folders Called `Assets` or `AssetTypes`](#structure-assettypes)
+    - [2.5.1 Creating a folder named `Assets` is redundant](#2.5.1)
+    - [2.5.2 Creating a folder named `Meshes`, `Textures`, or `Materials` is redundant](#2.5.2)
+  - [2.6 Very Large Asset Sets Get Their Own Folder Layout](#structure-large-sets)
+  - [2.7 `MaterialLibrary`](#structure-material-library)
+  - [2.8 No Empty Folders](#structure-no-empty-folders)
 - [3. Blueprints](#bp)
   - [3.1 Compiling](#bp-compiling)
   - [3.2 Variables](#bp-vars)
@@ -147,9 +115,6 @@ If you have made a notable fork or translation that is not suitable for a pull r
   - [6.1 No Errors Or Warnings](#levels-no-errors-or-warnings)
   - [6.2 Lighting Should Be Built](#levels-lighting-should-be-built)
   - [6.3 No Player Visible Z Fighting](#levels-no-visible-z-fighting)
-  - [6.4 Marketplace Specific Rules](#levels-mp-rules)
-    - [6.4.1 Overview Level](#levels-mp-rules-overview)
-    - [6.4.2 Demo Level](#levels-mp-rules-demo)
 - [7. Textures](#textures)
   - [7.1 Dimensions Are Powers of 2](#textures-dimensions)
   - [7.2 Texture Density Should Be Uniform](#textures-density)
@@ -157,11 +122,6 @@ If you have made a notable fork or translation that is not suitable for a pull r
   - [7.4 Textures Should Be Grouped Correctly](#textures-group)
 
 ## Important Terminology
-
-<a name="terms-level-map"></a>
-##### Levels/Maps
-
-The word 'map' generally refers to what the average person calls a 'level' and may be used interchangeably. See this term's history [here](https://en.wikipedia.org/wiki/Level_(video_gaming)).
 
 <a name="terms-identifiers"></a>
 ##### Identifiers
@@ -207,40 +167,25 @@ When in the context of a class, it is often used to convey discussion about its 
 These principles have been adapted from [idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/).
 
 <a name="0.1"></a>
-### 0.1 If your UE4 project already has a style guide, you should follow it
-
-If you are working on a project or with a team that has a pre-existing style guide, it should be respected.  Any inconsistency between an existing style guide and this guide should defer to the existing.
-
-Style guides should be living documents. You should propose style guide changes to an existing style guide as well as this guide if you feel the change benefits all usages.
-
-> #### "Arguments over style are pointless. There should be a style guide, and you should follow it."
-> [_Rebecca Murphey_](https://rmurphey.com)
-
-<a name="0.2"></a>
-### 0.2 All structure, assets, and code in any Unreal Engine 4 project should look like a single person created it, no matter how many people contributed
+### 0.1 All structure, assets, and code in any Unreal Engine project should look like a single person created it, no matter how many people contributed
 
 Moving from one project to another should not cause a re-learning of style and structure. Conforming to a style guide removes unneeded guesswork and ambiguities.
 
 It also allows for more productive creation and maintenance as one does not need to think about style. Simply follow the instructions. This style guide is written with best practices in mind, meaning that by following this style guide you will also minimize hard to track issues.
 
-<a name="0.3"></a>
-### 0.3 Friends do not let friends have bad style
+<a name="0.2"></a>
+### 0.2 Friends do not let friends have bad style
 
 If you see someone working either against a style guide or no style guide, try to correct them.
 
-When working within a team or discussing within a community such as [Unreal Slackers](http://join.unrealslackers.org/), it is far easier to help and to ask for help when people are consistent. Nobody likes to help untangle someone's Blueprint spaghetti or deal with assets that have names they can't understand.
+When working within a team or discussing within a community, it is far easier to help and to ask for help when people are consistent. Nobody likes to help untangle someone's Blueprint spaghetti or deal with assets that have names they can't understand.
 
 If you are helping someone whose work conforms to a different but consistent and sane style guide, you should be able to adapt to it. If they do not conform to any style guide, please direct them here.
 
-<a name="0.4"></a>
-### 0.4 A team without a style guide is no team of mine
+<a name="0.3"></a>
+### 0.3 Don't Break The Law
 
-When joining an Unreal Engine 4 team, one of your first questions should be "Do you have a style guide?". If the answer is no, you should be skeptical about their ability to work as a team.
-
-<a name="0.5"></a>
-### 0.5 Don't Break The Law
-
-Gamemakin LLC is not a lawyer, but please don't introduce illegal actions and behavior to a project, including but not limited to:
+Please don't introduce illegal actions and behavior to a project, including but not limited to:
 
 * Don't distribute content you don't have the rights to distribute
 * Don't infringe on someone else's copyrighted or trademark material
@@ -309,17 +254,17 @@ Depending on how your asset variants are made, you can chain together variant na
 | ----------------------- | ---------------------------------------------------------- |
 | Skeletal Mesh           | SK_Bob                                                     |
 | Material                | M_Bob                                                      |
-| Texture (Diffuse/Albedo)| T_Bob_D                                                    |
+| Texture (Base Color)    | T_Bob_C                                                    |
 | Texture (Normal)        | T_Bob_N                                                    |
-| Texture (Evil Diffuse)  | T_Bob_Evil_D                                               |
+| Texture (Evil Base Color)| T_Bob_Evil_C                                               |
 
 ##### 1.1e2 Rocks
 
 | Asset Type              | Asset Name                                                 |
 | ----------------------- | ---------------------------------------------------------- |
-| Static Mesh (01)        | S_Rock_01                                                  |
-| Static Mesh (02)        | S_Rock_02                                                  |
-| Static Mesh (03)        | S_Rock_03                                                  |
+| Static Mesh (01)        | SM_Rock_01                                                 |
+| Static Mesh (02)        | SM_Rock_02                                                 |
+| Static Mesh (03)        | SM_Rock_03                                                 |
 | Material                | M_Rock                                                     |
 | Material Instance (Snow)| MI_Rock_Snow                                               |
 
@@ -342,8 +287,8 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Level (Geometry)        |            | _Geo       |                                  |
 | Level (Gameplay)        |            | _Gameplay  |                                  |
 | Blueprint               | BP_        |            |                                  |
-| Material                | M_         |            |                                  |
-| Static Mesh             | S_         |            | Many use SM_. We use S_.         |
+| Material Instance       | MI_        |            |                                  |
+| Static Mesh             | SM_        |            |                                  |
 | Skeletal Mesh           | SK_        |            |                                  |
 | Texture                 | T_         | _?         | See [Textures](#anc-textures)    |
 | Particle System         | PS_        |            |                                  |
@@ -407,10 +352,14 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 
 | Asset Type                    | Prefix     | Suffix     | Notes                            |
 | ----------------------------- | ---------- | ---------- | -------------------------------- |
+| Master Material               | MM_        |            |                                  |
 | Material                      | M_         |            |                                  |
-| Material (Post Process)       | PP_        |            |                                  |
+| Material (Post Process)       | M_PP_      |            |                                  |
 | Material Function             | MF_        |            |                                  |
 | Material Instance             | MI_        |            |                                  |
+| Material Layer                | ML_        |            |                                  |
+| Material Layer Instance       | MLI_       |            |                                  |
+| Material Layer Blend          | MLB_       |            |                                  |
 | Material Parameter Collection | MPC_       |            |                                  |
 | Subsurface Profile            | SP_        |            |                                  |
 | Physical Materials            | PM_        |            |                                  |
@@ -423,21 +372,25 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Texture                 | T_         |            |                                  |
-| Texture (Diffuse/Albedo/Base Color)| T_ | _D      |                                  |
+| Texture (Base Color)    | T_         | _C         |                                  |
 | Texture (Normal)        | T_         | _N         |                                  |
 | Texture (Roughness)     | T_         | _R         |                                  |
-| Texture (Alpha/Opacity) | T_         | _A         |                                  |
-| Texture (Ambient Occlusion) | T_     | _O         |                                  |
+| Texture (Opacity)       | T_         | _O         |                                  |
+| Texture (Ambient Occlusion) | T_     | _A         |                                  |
 | Texture (Bump)          | T_         | _B         |                                  |
 | Texture (Emissive)      | T_         | _E         |                                  |
-| Texture (Mask)          | T_         | _M         |                                  |
+| Texture (Blend Mask)    | T_         | _B         |                                  |
 | Texture (Specular)      | T_         | _S         |                                  |
 | Texture (Metallic)      | T_         | _M         |                                  |
 | Texture (Packed)        | T_         | _*         | See notes below about [packing](#anc-textures-packing). |
 | Texture Cube            | TC_        |            |                                  |
+| Volume Texture          | TV_        |            |                                  |
+| Texture 2D Array        | TA_        |            |                                  |
+| Runtime Virtual Texture | VT_        |            |                                  |
 | Media Texture           | MT_        |            |                                  |
 | Render Target           | RT_        |            |                                  |
 | Cube Render Target      | RTC_       |            |                                  |
+| Volume Render Target    | RTV_       |            |                                  |
 | Texture Light Profile   | TLP        |            |                                  |
 
 <a name="anc-textures-packing"></a>
@@ -445,9 +398,7 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 #### 1.2.6.1 Texture Packing
 It is common practice to pack multiple layers of texture data into one texture. An example of this is packing Emissive, Roughness, Ambient Occlusion together as the Red, Green, and Blue channels of a texture respectively. To determine the suffix, simply stack the given suffix letters from above together, e.g. `_ERO`.
 
-> It is generally acceptable to include an Alpha/Opacity layer in your Diffuse/Albedo's alpha channel and as this is common practice, adding `A` to the `_D` suffix is optional.
-
-Packing 4 channels of data into a texture (RGBA) is not recommended except for an Alpha/Opacity mask in the Diffuse/Albedo's alpha channel as a texture with an alpha channel incurs more overhead than one without.
+> It is generally acceptable to include an Opacity layer in your BaseColor's alpha channel and as this is common practice, adding `O` to the `_C` suffix is needed.
 
 <a name="anc-misc"></a>
 <a name="1.2.7"></a>
@@ -478,21 +429,9 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Touch Interface Setup      | TI_        |            |                                  |
 | Vector Curve               | Curve_     | _Vector    |                                  |
 
-<a name="anc-paper2d"></a>
-<a name="1.2.8"></a>
-### 1.2.8 Paper 2D
-
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Paper Flipbook          | PFB_       |            |                                  |
-| Sprite                  | SPR_       |            |                                  |
-| Sprite Atlas Group      | SPRG_      |            |                                  |
-| Tile Map                | TM_        |            |                                  |
-| Tile Set                | TS_        |            |                                  |
-
 <a name="anc-physics"></a>
-<a name="1.2.9"></a>
-### 1.2.9 Physics
+<a name="1.2.8"></a>
+### 1.2.8 Physics
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
@@ -501,8 +440,8 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Destructible Mesh       | DM_        |            |                                  |
 
 <a name="anc-sounds"></a>
-<a name="1.2.10"></a>
-### 1.2.10 Sounds
+<a name="1.2.9"></a>
+### 1.2.9 Sounds
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
@@ -518,8 +457,8 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Sound Wave              | A_         |            |                                  |
 
 <a name="anc-ui"></a>
-<a name="1.2.11"></a>
-### 1.2.11 User Interface
+<a name="1.2.10"></a>
+### 1.2.10 User Interface
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
@@ -529,13 +468,14 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Widget Blueprint        | WBP_       |            |                                  |
 
 <a name="anc-effects"></a>
-<a name="1.2.12"></a>
-### 1.2.12 Effects
+<a name="1.2.11"></a>
+### 1.2.11 Effects
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
-| Particle System         | PS_        |            |                                  |
-| Material (Post Process) | PP_        |            |                                  |
+| Niagara Particle Effect | NPE_       |            |                                  |
+| Niagara Particle System | NPS_       |            |                                  |
+| Material (Post Process) | M_PP_      |            |                                  |
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -548,62 +488,6 @@ Equally important as asset names, the directory structure style of a project sho
 There are multiple ways to lay out the content of a UE4 project. In this style, we will be using a structure that relies more on filtering and search abilities of the Content Browser for those working with assets to find assets of a specific type instead of another common structure that groups asset types with folders.
 
 > If you are using the prefix [naming convention](#1.2) above, using folders to contain assets of similar types such as `Meshes`, `Textures`, and `Materials` is a redundant practice as asset types are already both sorted by prefix as well as able to be filtered in the content browser.
-
-<a name="2e1"><a>
-### 2e1 Example Project Content Structure
-<pre>
-|-- Content
-    |-- <a href="#2.2">GenericShooter</a>
-        |-- Art
-        |   |-- Industrial
-        |   |   |-- Ambient
-        |   |   |-- Machinery
-        |   |   |-- Pipes
-        |   |-- Nature
-        |   |   |-- Ambient
-        |   |   |-- Foliage
-        |   |   |-- Rocks
-        |   |   |-- Trees
-        |   |-- Office
-        |-- Characters
-        |   |-- Bob
-        |   |-- Common
-        |   |   |-- <a href="#2.7">Animations</a>
-        |   |   |-- Audio
-        |   |-- Jack
-        |   |-- Steve
-        |   |-- <a href="#2.1.3">Zoe</a>
-        |-- <a href="#2.5">Core</a>
-        |   |-- Characters
-        |   |-- Engine
-        |   |-- <a href="#2.1.2">GameModes</a>
-        |   |-- Interactables
-        |   |-- Pickups
-        |   |-- Weapons
-        |-- Effects
-        |   |-- Electrical
-        |   |-- Fire
-        |   |-- Weather
-        |-- <a href="#2.4">Maps</a>
-        |   |-- Campaign1
-        |   |-- Campaign2
-        |-- <a href="#2.8">MaterialLibrary</a>
-        |   |-- Debug
-        |   |-- Metal
-        |   |-- Paint
-        |   |-- Utility
-        |   |-- Weathering
-        |-- Placeables
-        |   |-- Pickups
-        |-- Weapons
-            |-- Common
-            |-- Pistols
-            |   |-- DesertEagle
-            |   |-- RocketPistol
-            |-- Rifles
-</pre>
-
-The reasons for this structure are listed in the following sub-sections.
 
 <a name="2.1"></a>
 <a name="structure-folder-names"><a>
@@ -710,26 +594,16 @@ Being able to tell someone to open a specific map without having to explain wher
 This also simplifies the job of cooking for engineers. Wrangling levels for a build process can be extremely frustrating if they have to dig through arbitrary folders for them. If a team's maps are all in one place, it is much harder to accidentally not cook a map in a build. It also simplifies lighting build scripts as well as QA processes.
 
 <a name="2.5"></a>
-<a name="structure-core"></a>
-### 2.5 Use A `Core` Folder For Critical Blueprints And Other Assets
-
-Use `/Content/Project/Core` folder for assets that are absolutely fundamental to a project's workings. For example, base `GameMode`, `Character`, `PlayerController`, `GameState`, `PlayerState`, and related Blueprints should live here.
-
-This creates a very clear "don't touch these" message for other team members. Non-engineers should have very little reason to enter the `Core` folder. Following good code structure style, designers should be making their gameplay tweaks in child classes that expose functionality. World builders should be using prefab Blueprints in designated folders instead of potentially abusing base classes.
-
-For example, if your project requires pickups that can be placed in a level, there should exist a base Pickup class in `Core/Pickups` that defines base behavior for a pickup. Specific pickups such as a Health or Ammo should exist in a folder such as `/Content/Project/Placeables/Pickups/`. Game designers can define and tweak pickups in this folder however they please, but they should not touch `Core/Pickups` as they may unintentionally break pickups project-wide.
-
-<a name="2.6"></a>
 <a name="structure-assettypes"></a>
-### 2.6 Do Not Create Folders Called `Assets` or `AssetTypes`
+### 2.5 Do Not Create Folders Called `Assets` or `AssetTypes`
 
-<a name="2.6.1"></a>
-#### 2.6.1 Creating a folder named `Assets` is redundant
+<a name="2.5.1"></a>
+#### 2.5.1 Creating a folder named `Assets` is redundant
 
 All assets are assets.
 
-<a name="2.6.2"></a>
-#### 2.6.2 Creating a folder named `Meshes`, `Textures`, or `Materials` is redundant
+<a name="2.5.2"></a>
+#### 2.5.2 Creating a folder named `Meshes`, `Textures`, or `Materials` is redundant
 
 All asset names are named with their asset type in mind. These folders offer only redundant information and the use of these folders can easily be replaced with the robust and easy to use filtering system the Content Browser provides.
 
@@ -739,21 +613,21 @@ Want to view only static mesh in `Environment/Rocks/`? Simply turn on the Static
 
 Not doing this also prevents the inevitability of someone putting a static mesh or a texture in a `Materials` folder.
 
-<a name="2.7"></a>
+<a name="2.6"></a>
 <a name="structure-large-sets"></a>
-### 2.7 Very Large Asset Sets Get Their Own Folder Layout
+### 2.6 Very Large Asset Sets Get Their Own Folder Layout
 
-This can be seen as a pseudo-exception to [2.6](#2.6).
+This can be seen as a pseudo-exception to [2.5](#2.5).
 
 There are certain asset types that have a huge volume of related files where each asset has a unique purpose. The two most common are Animation and Audio assets. If you find yourself having 15+ of these assets that belong together, they should be together.
 
 For example, animations that are shared across multiple characters should lay in `Characters/Common/Animations` and may have sub-folders such as `Locomotion` or `Cinematic`.
 
-> This does not apply to assets like textures and materials. It is common for a `Rocks` folder to have a large amount of textures if there are a large amount of rocks, however these textures are generally only related to a few specific rocks and should be named appropriately. Even if these textures are part of a [Material Library](#2.8).
+> This does not apply to assets like textures and materials. It is common for a `Rocks` folder to have a large amount of textures if there are a large amount of rocks, however these textures are generally only related to a few specific rocks and should be named appropriately. Even if these textures are part of a [Material Library](#2.7).
 
-<a name="2.8"></a>
+<a name="2.7"></a>
 <a name="structure-material-library"></a>
-### 2.8 `MaterialLibrary`
+### 2.7 `MaterialLibrary`
 
 If your project makes use of master materials, layered materials, or any form of reusable materials or textures that do not belong to any subset of assets, these assets should be located in `Content/Project/MaterialLibrary`.
 
@@ -765,15 +639,15 @@ The `MaterialLibrary` doesn't have to consist of purely materials. Shared utilit
 
 Any testing or debug materials should be within `MaterialLibrary/Debug`. This allows debug materials to be easily stripped from a project before shipping and makes it incredibly apparent if production assets are using them if reference errors are shown.
 
-<a name="2.9"></a>
+<a name="2.8"></a>
 <a name="structure-no-empty-folders"></a>
-### 2.9 No Empty Folders
+### 2.8 No Empty Folders
 
 There simply shouldn't be any empty folders. They clutter the content browser.
 
 If you find that the content browser has an empty folder you can't delete, you should perform the following:
 1. Be sure you're using source control.
-1. Immediately run Fix Up Redirectors on your project.
+1. Immediately run Fix Up Redirectors on that folder.
 1. Navigate to the folder on-disk and delete the assets inside.
 1. Close the editor.
 1. Make sure your source control state is in sync (i.e. if using Perforce, run a Reconcile Offline Work on your content directory)
@@ -1369,32 +1243,6 @@ It is normal during development for levels to occasionally not have lighting bui
 ### 6.3 No Player Visible Z Fighting
 
 Levels should not have any [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) in all areas visible to the player.
-
-<a name="6.4"></a>
-<a name="levels-mp-rules"></a>
-### 6.4 Marketplace Specific Rules
-
-If a project is to be sold on the UE4 Marketplace, it must follow these rules.
-
-<a name="6.4.1"></a>
-<a name="levels-mp-rules-overview"></a>
-#### 6.4.1 Overview Level
-
-If your project contains assets that should be visualized or demoed, you must have a map within your project that contains the name "Overview".
-
-This overview map, if it is visualizing assets, should be set up according to [Epic's guidelines](http://help.epicgames.com/customer/en/portal/articles/2592186-marketplace-submission-guidelines-preparing-your-assets#Required%20Levels%20and%20Maps).
-
-For example, `InteractionComponent_Overview`.
-
-<a name="6.4.2"></a>
-<a name="levels-mp-rules-demo"></a>
-#### 6.4.2 Demo Level
-
-If your project contains assets that should be demoed or come with some sort of tutorial, you must have a map within your project that contains the name "Demo". This level should also contain documentation within it in some form that illustrates how to use your project. See Epic's Content Examples project for good examples on how to do this.
-
-If your project is a gameplay mechanic or other form of system as opposed to an art pack, this can be the same as your "Overview" map.
-
-For example, `InteractionComponent_Overview_Demo`, `ExplosionKit_Demo`.
 
 **[⬆ Back to Top](#table-of-contents)**
 
