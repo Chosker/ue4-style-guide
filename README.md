@@ -431,8 +431,15 @@ It is common practice to pack multiple layers of texture data into one texture. 
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
-| Niagara Particle Effect | NPE_       |            |                                  |
-| Niagara Particle System | NPS_       |            |                                  |
+| Niagara Emitter         | NE_        |            |                                  |
+| Niagara System          | NS_        |            |                                  |
+| Niagara Dynamic Input Script | NDIS_ |            |                                  |
+| Niagara Effect Type     | NET_       |            |                                  |
+| Niagara Function Script | NFS_       |            |                                  |
+| Niagara Module Script   | NMS_       |            |                                  |
+| Niagara Parameter Collection | NPC_  |            |                                  |
+| Niagara Parameter Collection Instance | NPCI_  |  |                                  |
+| Niagara Parameter Definitions | NPD_ |            |                                  |
 | Material (Post Process) | M_PP_      |            |                                  |
 
 **[⬆ Back to Top](#table-of-contents)**
