@@ -303,6 +303,7 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Structure               | F or S     |            | No underscore.                   |
 | Tutorial Blueprint      | TBP_       |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
+| Editor Utility Widget   | EUW_       |            |                                  |
 
 <a name="anc-materials"></a>
 <a name="1.2.5"></a>
@@ -340,6 +341,7 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Texture (Blend Mask)    | T_         | _B         |                                  |
 | Texture (Specular)      | T_         | _S         |                                  |
 | Texture (Metallic)      | T_         | _M         |                                  |
+| Texture (Flow)          | T_         | _F         | Flowmap or Optical Flow          |
 | Texture (Packed)        | T_         | _*         | See notes below about [packing](#anc-textures-packing). |
 | Texture Cube            | TC_        |            |                                  |
 | Volume Texture          | TV_        |            |                                  |
