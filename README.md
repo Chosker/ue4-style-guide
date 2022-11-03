@@ -336,7 +336,6 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Texture (Roughness)     | T_         | _R         |                                  |
 | Texture (Opacity)       | T_         | _O         |                                  |
 | Texture (Ambient Occlusion) | T_     | _A         |                                  |
-| Texture (Bump)          | T_         | _B         |                                  |
 | Texture (Emissive)      | T_         | _E         |                                  |
 | Texture (Blend Mask)    | T_         | _B         |                                  |
 | Texture (Specular)      | T_         | _S         |                                  |
