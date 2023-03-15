@@ -299,8 +299,10 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Blueprint Function Library | BPFL_   |            |                                  |
 | Blueprint Interface     | BPI_       |            |                                  |
 | Blueprint Macro Library | BPML_      |            | Do not use macro libraries if possible. |
+| PackedLevelActor Blueprint | BP_     |            |                                  |
+| PackedLevelActor Level  | BPL_       |            |                                  |
 | Enumeration             | E          |            | No underscore.                   |
-| Structure               | F or S     |            | No underscore.                   |
+| Structure               | S or F     |            | No underscore.                   |
 | Tutorial Blueprint      | TBP_       |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
 | Editor Utility Widget   | EUW_       |            |                                  |
@@ -340,6 +342,7 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Texture (Blend Mask)    | T_         | _B         |                                  |
 | Texture (Specular)      | T_         | _S         |                                  |
 | Texture (Metallic)      | T_         | _M         |                                  |
+| Texture (Displacement)  | T_         | _D         |                                  |
 | Texture (Flow)          | T_         | _F         | Flowmap or Optical Flow          |
 | Texture (Packed)        | T_         | _*         | See notes below about [packing](#anc-textures-packing). |
 | Texture Cube            | TC_        |            |                                  |
