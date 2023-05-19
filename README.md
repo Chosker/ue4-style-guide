@@ -359,6 +359,7 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 <a name="1.2.6.1"></a>
 #### 1.2.6.1 Texture Packing
 It is common practice to pack multiple layers of texture data into one texture. An example of this is packing Emissive, Roughness, Ambient Occlusion together as the Red, Green, and Blue channels of a texture respectively. To determine the suffix, simply stack the given suffix letters from above together, e.g. `_ERO`.
+
 When texture variations are packed into different channels of the same texture (mostly used for VFX) then each variation type should be specified as a suffix in the stack. An example of this is packing 3 different (grayscale) BaseColor texture variations with 1 Opacity texture, resulting in the suffix `_CCCO`.
 
 > It is generally acceptable to include an Opacity layer in your BaseColor's alpha channel and as this is common practice, adding `O` to the `_C` suffix is needed.
