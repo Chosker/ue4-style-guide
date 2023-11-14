@@ -306,6 +306,8 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Tutorial Blueprint      | TBP_       |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
 | Editor Utility Widget   | EUW_       |            |                                  |
+| Editor Utility Blueprint | EUB_      |            |                                  |
+| Editor Utility Blueprint Component | EUB_ | Component |                              |
 
 <a name="anc-materials"></a>
 <a name="1.2.5"></a>
@@ -322,9 +324,10 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Material Layer Instance       | MLI_       |            |                                  |
 | Material Layer Blend          | MLB_       |            |                                  |
 | Material Parameter Collection | MPC_       |            |                                  |
-| Subsurface Profile            | SP_        |            |                                  |
+| Subsurface Profile            | SSP_       |            |                                  |
 | Physical Materials            | PM_        |            |                                  |
-| Decal                         | M_, MI_    | _Decal     |                                  |
+| Material (Decal)              | M_Decal_   |            |                                  |
+| Material Instance (Decal)     | MI_Decal_  |            |                                  |
 
 <a name="anc-textures"></a>
 <a name="1.2.6"></a>
@@ -348,12 +351,12 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Texture Cube            | TC_        |            |                                  |
 | Volume Texture          | TV_        |            |                                  |
 | Texture 2D Array        | TA_        |            |                                  |
-| Runtime Virtual Texture | VT_        |            |                                  |
+| Runtime Virtual Texture | RVT_       |            |                                  |
 | Media Texture           | MT_        |            |                                  |
 | Render Target           | RT_        |            |                                  |
 | Cube Render Target      | RTC_       |            |                                  |
 | Volume Render Target    | RTV_       |            |                                  |
-| Texture Light Profile   | TLP        |            |                                  |
+| Texture Light Profile   | TLP_       |            |                                  |
 
 <a name="anc-textures-packing"></a>
 <a name="1.2.6.1"></a>
@@ -400,7 +403,7 @@ When texture variations are packed into different channels of the same texture (
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Physical Material       | PM_        |            |                                  |
-| Physics Asset           | PHYS_      |            |                                  |
+| Physics Asset           | PA_        |            |                                  |
 | Destructible Mesh       | DM_        |            |                                  |
 
 <a name="anc-sounds"></a>
@@ -446,7 +449,6 @@ When texture variations are packed into different channels of the same texture (
 | Niagara Parameter Collection | NPC_  |            |                                  |
 | Niagara Parameter Collection Instance | NPCI_  |  |                                  |
 | Niagara Parameter Definitions | NPD_ |            |                                  |
-| Material (Post Process) | M_PP_      |            |                                  |
 
 **[⬆ Back to Top](#table-of-contents)**
 
