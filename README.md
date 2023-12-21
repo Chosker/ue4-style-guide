@@ -380,7 +380,7 @@ When texture variations are packed into different channels of the same texture (
 | Data Asset                 | *_         |            | Prefix should be based on class. |
 | Data Table                 | DT_        |            |                                  |
 | Float Curve                | Curve_     | _Float     |                                  |
-| Foliage Type               | FT_        |            |                                  |
+| Static Mesh Foliage        | SMF_       |            |                                  |
 | Force Feedback Effect      | FFE_       |            |                                  |
 | Landscape Grass Type       | LG_        |            |                                  |
 | Landscape Layer            | LL_        |            |                                  |
